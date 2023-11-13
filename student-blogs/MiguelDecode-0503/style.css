@@ -1,0 +1,187 @@
+:root {
+  --amethyst: hsla(287, 51%, 60%, 1);
+  --electric-blue: hsla(180, 85%, 73%, 1);
+  --violet-web-color: hsla(288, 78%, 75%, 1);
+  --orchid: hsla(296, 73%, 65%, 1);
+  --robin-egg-blue: hsla(185, 97%, 42%, 1);
+  --clr-light: hsl(0, 0%, 100%);
+  --clr-dark: hsl(0, 0%, 14%);
+  --z-menu: 10;
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Utilities */
+
+button {
+  border: none;
+  color: var(--clr-light);
+  background-color: var(--amethyst);
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--electric-blue);
+  color: var(--amethyst);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 40vw 30vw 30vw;
+  grid-template-rows: repeat(10, 1fr);
+  max-height: 100vh;
+}
+
+.nav {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  z-index: var(--z-menu);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1rem 3rem;
+
+  & ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+
+    & a {
+      text-decoration: none;
+      color: var(--clr-light);
+      font-size: 1.15rem;
+      font-weight: bold;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: var(--robin-egg-blue);
+      }
+    }
+  }
+}
+
+.main-poster {
+  grid-column: 1 / 2;
+  grid-row: 1 / 11;
+  background-image: url("./assets/game-controller.jpg");
+  background-position: 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & h1 {
+    font-size: 4rem;
+    color: var(--clr-light);
+  }
+}
+
+.title {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  background-color: var(--robin-egg-blue);
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 2rem;
+  color: var(--clr-light);
+  text-transform: uppercase;
+}
+
+.profile {
+  grid-column: 2 / 3;
+  grid-row: 4 / 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+
+  & div {
+    display: flex;
+    gap: 2rem;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  & p {
+    text-align: justify;
+  }
+
+  & img {
+    width: 30%;
+    object-fit: cover;
+  }
+}
+
+.second-poster {
+  grid-column: 2 / 3;
+  grid-row: 7 / 11;
+  background-image: url("./assets/little-computer.jpg");
+  background-size: cover;
+}
+
+.third-poster {
+  grid-column: 3 / 4;
+  grid-row: 1 / 6;
+
+  background-image: url("./assets/setup.jpg");
+  background-size: cover;
+}
+
+.description {
+  grid-column: 3 / 4;
+  grid-row: 6 / 11;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 3rem;
+  background-color: var(--violet-web-color);
+  color: var(--clr-light);
+
+  & h2 {
+    font-size: 2rem;
+  }
+
+  & p {
+    text-align: justify;
+    line-height: 1.8;
+  }
+}
