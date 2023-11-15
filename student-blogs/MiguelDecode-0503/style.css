@@ -51,12 +51,15 @@ button {
   font-weight: bold;
   padding: 0.5rem 1.5rem;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  text-transform: uppercase;
 }
 
 button:hover {
   background-color: var(--electric-blue);
   color: var(--amethyst);
 }
+
+/* Main Styles */
 
 main {
   display: grid;
@@ -67,6 +70,7 @@ main {
 }
 
 .nav {
+  display: none;
   position: fixed;
   width: 40%;
   z-index: var(--z-menu);
@@ -105,12 +109,19 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
+  color: var(--clr-light);
+  text-align: center;
 
   & h1 {
     font-size: 5rem;
-    color: var(--clr-light);
+  }
+
+  & h2 {
+    font-size: 4rem;
   }
 }
 
@@ -120,9 +131,13 @@ main {
   background-color: var(--robin-egg-blue);
   font-size: 3rem;
   font-weight: bold;
-  padding: 1rem 2rem;
+  padding: 2rem;
   color: var(--clr-light);
   text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile {
@@ -131,11 +146,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 2rem;
 
   & div {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 
     & div {
       display: flex;
@@ -188,14 +204,21 @@ main {
   }
 }
 
+/* MOBILE STYLES */
+
 @media screen and (max-width: 48rem) {
   main {
     max-height: initial;
   }
 
   .nav {
+    display: block;
     width: 100%;
     padding: 1rem;
+
+    & ul > li > a {
+      font-size: 1rem;
+    }
   }
 
   .main-poster {
@@ -233,12 +256,15 @@ main {
   }
 }
 
+/* TABLET STYLES */
+
 @media screen and (min-width: 40rem) and (max-width: 90rem) {
   main {
     max-height: initial;
   }
 
   .nav {
+    display: block;
     width: 100%;
     padding: 1rem;
   }
@@ -253,6 +279,7 @@ main {
   }
 
   .title {
+    font-size: 2rem;
     grid-column: 1/2;
     grid-row: 4 / 6;
   }
