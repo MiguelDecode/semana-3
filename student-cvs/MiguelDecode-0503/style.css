@@ -1,0 +1,143 @@
+/* Root */
+:root {
+  --text-clr: hsl(210, 11%, 15%);
+  --bg-clr: hsl(210, 17%, 98%);
+  --accent-clr: hsl(354, 59%, 55%);
+}
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+  background-color: var(--bg-clr);
+  color: var(--text-clr);
+  line-height: 1.5;
+  background-image: url("https://images.unsplash.com/photo-1615800098779-1be32e60cca3?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-clr);
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Utilities */
+.wrapper {
+  width: min(90%, 64rem);
+  margin-inline: auto;
+}
+
+/* Navigation */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & h1 {
+    font-family: "Architects Daughter", cursive;
+    color: var(--accent-clr);
+  }
+
+  & ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    padding-left: 0;
+
+    & li a {
+      transition: color 0.3s ease-in-out;
+      font-weight: bold;
+
+      &:hover {
+        color: var(--accent-clr);
+      }
+    }
+  }
+}
+
+/* About */
+
+.about {
+  display: grid;
+  column-gap: 3rem;
+  grid-template-columns: 40% 1fr;
+  place-items: start;
+  text-align: justify;
+  margin-block: 5rem;
+
+  & h2,
+  h3 {
+    color: var(--accent-clr);
+  }
+
+  & ul li span {
+    font-weight: bold;
+  }
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    & li a {
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--accent-clr);
+      }
+    }
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 64rem) {
+  .about {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column-reverse;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 36rem) {
+  footer {
+    flex-direction: column;
+  }
+}
