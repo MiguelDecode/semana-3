@@ -10,7 +10,6 @@
 
     <!-- Vanilla Styles  -->
     <!-- <link rel="stylesheet" href="./contact.css" /> -->
-
   </head>
 
   <body class="flex justify-center items-center min-h-screen">
@@ -21,7 +20,7 @@
         <div class="flex flex-col my-4">
           <label class="font-semibold" for="name">Name</label>
           <input
-            class="border-2 border-sky-300 rounded-md p-2 focus:outline-sky-500"
+            class="border-2 border-sky-300 pl-4 rounded-md p-2 focus:outline-sky-500"
             type="text"
             id="name"
             name="name"
@@ -33,7 +32,7 @@
         <div class="flex flex-col my-4">
           <label class="font-semibold" for="email">Email</label>
           <input
-            class="border-2 border-sky-300 rounded-md p-2 focus:outline-sky-500"
+            class="border-2 border-sky-300 pl-4 rounded-md p-2 focus:outline-sky-500"
             type="email"
             name="email"
             id="email"
@@ -47,7 +46,7 @@
             class="flex flex-col gap-2 border-2 border-sky-300 rounded-md p-2"
           >
             <legend class="font-semibold">Budget</legend>
-            <label for="10000">
+            <label class="pl-4" for="10000">
               <input
                 type="radio"
                 name="budget"
@@ -58,7 +57,7 @@
 
               $10000</label
             >
-            <label for="5000">
+            <label class="pl-4" for="5000">
               <input
                 type="radio"
                 name="budget"
@@ -69,7 +68,7 @@
 
               $5000</label
             >
-            <label for="3000">
+            <label class="pl-4" for="3000">
               <input
                 type="radio"
                 name="budget"
@@ -87,7 +86,12 @@
 
         <div class="flex flex-col my-4">
           <label class="font-semibold" for="type">Type of project</label>
-          <select id="type" name="type" required>
+          <select
+            class="pl-4 bg-transparent border-2 rounded-md border-sky-300 p-2 focus:outline-sky-500"
+            id="type"
+            name="type"
+            required
+          >
             <option value="Website" selected>Website</option>
             <option value="WebApp">WebApp</option>
             <option value="Mobile App">Mobile App</option>
@@ -98,7 +102,7 @@
         <div class="flex flex-col my-4">
           <label class="font-semibold" for="description">Description</label>
           <textarea
-            class="border-2 p-2 rounded-md border-sky-300 focus:outline-sky-500"
+            class="border-2 p-4 rounded-md border-sky-300 focus:outline-sky-500"
             id="description"
             name="comment"
             placeholder="Write a description at least five hundred words about the project."
